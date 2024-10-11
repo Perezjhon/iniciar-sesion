@@ -1,0 +1,25 @@
+{% extends "plagas_y_enfermedades/plagas_y_enfermedades.html" %}
+{% load static %}
+
+{% block title %}Plagas y enfermedades{% endblock %}
+{% block content %}
+
+{% for plagas_y_enfermedades in plagas_y_enfermedadess %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<div class="col-xl-6 d-flex justify-content-center">
+<div class="card rounded-0 mt-3 mb-2 text-white" style="background-image: url('{{ plagas_y_enfermedades.imagen.url}}'); background-size: cover; width: 85rem;">
+    <div class="row g-0">
+      <div class="col-xl-12">
+        <div class="card-body">
+          <h1 class="card-title fw-bold" style="font-size: 3.5rem;">{{ plagas_y_enfermedades.titulo }}</h1>
+          <p class="card-text col-8 fw-semibold" style="font-size: 1.6rem;">{{ plagas_y_enfermedades.descripcion }}</p>
+          <div class="btn mt-5">
+          <a href="{{ plagas_y_enfermedades.urlDestino }}" class="btn btn-outline-success text-white border-white rounded-0 fs-5 position-absolute bottom-0 start-0 ms-3 mb-3" style="font-weight: 900;">Ver Más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

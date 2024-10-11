@@ -1,0 +1,28 @@
+{% extends "pagina_inicial/pagina_inicial.html" %}
+{% load static %}
+
+
+{% block title %}Pagina inicial{% endblock %}
+
+{% block content %}
+
+  {% for pagina_inicial in pagina_inicials %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+    <div class="col-xl-6 d-flex justify-content-center mb-4">
+<<<<<<< HEAD
+      <div class="card d-flex card-modulo rounded-0 border-white border-shadow" style="background-image: url('{{ pagina_inicial.imagen.url }}'); width: 90rem; height: auto; background-size: cover;">
+=======
+      <div class="card d-flex mt-1 card-modulo rounded-0 border-white border-shadow" style="background-image: url('{{ pagina_inicial.imagen.url }}'); width: 100rem; height: auto; background-size: cover;">
+>>>>>>> 7fd819e (definicion del perfil)
+        <div class="card-body text-light">
+          <h1 class="card-title col-xx-8 fw-bold" style="font-size: 3.8rem;">{{ pagina_inicial.titulo }}</h1>
+          <p class="card-text col-xxl-8 card-descripcion fw-semibold" style="font-size: 1.5rem;">{{ pagina_inicial.descripcion }}</p>
+          <div class="btn mt-5">
+          <a href="{{ pagina_inicial.urlDestino }}" class="btn btn-outline-success text-light border-light rounded-0 position-absolute bottom-0 start-0 ms-3 mb-3" style="font-weight: 900; font-size: 1.5rem;">Conoce Más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% endfor %}
+{% endblock %}
